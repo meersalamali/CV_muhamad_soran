@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ckb" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammed Sorna Ali</title>
+<meta name="description" content="Muhammed Sorna Ali — CAD/CAM & Automation Specialist">
+<link rel="icon" href="assets/photo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Noto+Kufi+Arabic:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2a40; --navy-2:#13344f; --teal:#14a0a0; --teal-2:#1bc4b8; --teal-soft:#d9f2f0;
+  --bg:#f4f7fa; --surface:#ffffff; --surface-2:#eef3f7; --text:#11243a; --muted:#5b6b7d; --line:#dbe3ea;
+  --shadow:0 20px 50px -20px rgba(15,42,64,.25);
+  --grid:rgba(15,42,64,.06);
+  --radius:22px;
+  --font-latin:'Outfit',system-ui,sans-serif;
+  --font-arabic:'Vazirmatn','Noto Sans Arabic',system-ui,sans-serif;
+  --font-head-arabic:'Noto Kufi Arabic','Vazirmatn',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a1724; --surface:#10233a; --surface-2:#142c46; --text:#e7eef5; --muted:#9fb1c3; --line:#1f3a56;
+    --teal-soft:rgba(27,196,184,.12); --shadow:0 20px 50px -20px rgba(0,0,0,.6); --grid:rgba(27,196,184,.06);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a1724; --surface:#10233a; --surface-2:#142c46; --text:#e7eef5; --muted:#9fb1c3; --line:#1f3a56;
+  --teal-soft:rgba(27,196,184,.12); --shadow:0 20px 50px -20px rgba(0,0,0,.6); --grid:rgba(27,196,184,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-arabic); background:var(--bg); color:var(--text); line-height:1.75;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:40px 40px; overflow-x:hidden; transition:background-color .3s,color .3s;
+}
+html[lang="en"] body{font-family:var(--font-latin);line-height:1.65}
+h1,h2,h3{font-family:var(--font-head-arabic);line-height:1.3}
+html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3{font-family:var(--font-latin)}
+a{color:inherit;text-decoration:none}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset-inline:0;top:0;z-index:50;transition:.3s}
+.nav.scrolled{background:color-mix(in srgb,var(--surface) 82%,transparent);backdrop-filter:blur(14px);box-shadow:0 6px 30px -18px rgba(0,0,0,.4)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-family:var(--font-latin);letter-spacing:.5px}
+.brand-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--teal));display:grid;place-items:center;color:#fff;font-size:15px}
+.menu{display:flex;gap:4px;list-style:none}
+.menu a{padding:8px 14px;border-radius:999px;font-weight:500;font-size:15px;color:var(--muted);transition:.2s}
+.menu a:hover,.menu a.active{color:var(--teal);background:var(--teal-soft)}
+.tools{display:flex;align-items:center;gap:8px}
+.lang{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:var(--shadow)}
+.lang button{border:0;background:transparent;color:var(--muted);font:600 13px var(--font-arabic);padding:7px 12px;border-radius:999px;cursor:pointer;transition:.2s}
+.lang button[data-l="en"]{font-family:var(--font-latin)}
+.lang button.on{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff}
+.icon-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--text);display:grid;place-items:center;cursor:pointer;transition:.2s}
+.icon-btn:hover{color:var(--teal);transform:rotate(15deg)}
+.icon-btn svg{width:19px;height:19px}
+.burger{display:none}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:min(100vh,940px);display:flex;align-items:center;padding:120px 0 70px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset-inline-start:-10%;top:-30%;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(20,160,160,.22),transparent 65%);filter:blur(10px)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;background:var(--teal-soft);color:var(--teal);font-weight:600;font-size:14px;margin-bottom:22px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(20,160,160,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(20,160,160,0)}100%{box-shadow:0 0 0 0 rgba(20,160,160,0)}}
+.hero h1{font-size:clamp(42px,6.4vw,82px);font-weight:900;letter-spacing:-1px;line-height:1.08}
+html[lang="en"] .hero h1{text-transform:uppercase;letter-spacing:-2px}
+.hero h1 .l2{display:block;background:linear-gradient(90deg,var(--teal),var(--teal-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{margin-top:18px;font-size:clamp(15px,1.6vw,19px);font-weight:600;color:var(--muted);letter-spacing:1px}
+html[lang="en"] .role{letter-spacing:4px;text-transform:uppercase}
+.role-bar{width:80px;height:5px;border-radius:9px;background:linear-gradient(90deg,var(--teal),var(--teal-2));margin:22px 0}
+.motto{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.motto span{padding:6px 14px;border:1px dashed var(--teal);border-radius:10px;font-size:14px;font-weight:600;color:var(--teal)}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:14px;font-weight:700;font-size:15px;transition:.25s;cursor:pointer;border:0;font-family:inherit}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;box-shadow:0 14px 30px -12px rgba(20,160,160,.7)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 34px -12px rgba(20,160,160,.8)}
+.btn-ghost{background:var(--surface);color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-3px)}
+
+.photo-box{position:relative;justify-self:center;width:min(380px,100%)}
+.photo-frame{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:310/345;box-shadow:var(--shadow);border:6px solid var(--surface);z-index:2;transform:rotate(-2deg);transition:.5s}
+.photo-box:hover .photo-frame{transform:rotate(0)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-box::before{content:"";position:absolute;inset:-18px;border-radius:40px;background:linear-gradient(135deg,var(--navy),var(--teal));transform:rotate(4deg);z-index:1;opacity:.95}
+.gear{position:absolute;z-index:3;color:var(--teal);animation:spin 18s linear infinite;filter:drop-shadow(0 6px 10px rgba(0,0,0,.2))}
+.gear.g1{width:86px;height:86px;inset-inline-end:-34px;top:-30px}
+.gear.g2{width:54px;height:54px;inset-inline-end:34px;top:-48px;animation-direction:reverse;animation-duration:12s;color:var(--navy)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.badge{position:absolute;z-index:4;background:var(--surface);border-radius:18px;padding:12px 16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;animation:float 5s ease-in-out infinite}
+.badge b{font-size:22px;font-family:var(--font-latin);color:var(--teal);line-height:1}
+.badge small{display:block;font-size:12px;color:var(--muted);line-height:1.3}
+.badge .bi{width:40px;height:40px;border-radius:12px;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center}
+.badge .bi svg{width:20px;height:20px}
+.badge.b1{inset-inline-start:-46px;bottom:60px}
+.badge.b2{inset-inline-end:-30px;bottom:-26px;animation-delay:1.5s}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* ---------- STATS ---------- */
+.stats{margin-top:-10px;position:relative;z-index:5}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:var(--radius);padding:30px;color:#fff;box-shadow:var(--shadow);overflow:hidden;position:relative}
+.stats-grid::after{content:"";position:absolute;inset-inline-end:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:30px solid rgba(27,196,184,.15)}
+.stat{text-align:center;padding:6px 10px;border-inline-end:1px solid rgba(255,255,255,.12)}
+.stat:last-child{border:0}
+.stat .num{font:800 clamp(30px,4vw,44px) var(--font-latin);color:var(--teal-2);line-height:1.1}
+.stat .lbl{font-size:14px;opacity:.85}
+
+/* ---------- SECTIONS ---------- */
+section.block{padding:100px 0}
+.sec-head{display:flex;align-items:center;gap:18px;margin-bottom:46px}
+.sec-icon{width:62px;height:62px;flex:none;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;box-shadow:0 0 0 6px var(--teal-soft)}
+.sec-icon svg{width:28px;height:28px}
+.sec-head h2{font-size:clamp(26px,3.4vw,38px);font-weight:800}
+html[lang="en"] .sec-head h2{text-transform:uppercase;letter-spacing:1px}
+.sec-head .ln{flex:1;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+[dir="rtl"] .sec-head .ln{background:linear-gradient(-90deg,var(--teal),transparent)}
+.sec-num{font:800 14px var(--font-latin);color:var(--teal);opacity:.8}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:34px;box-shadow:var(--shadow)}
+.about-text{font-size:clamp(17px,1.6vw,20px);color:var(--text)}
+html[lang="en"] .about-text::first-letter{font-size:1.6em;color:var(--teal);font-weight:800}
+.quote{position:relative;background:linear-gradient(160deg,var(--navy),#0b1f31);color:#fff;border:0;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.quote .qm{font:900 120px/0.6 Georgia,serif;color:var(--teal-2);opacity:.6;margin-bottom:10px}
+.quote p{font-size:22px;font-style:italic;font-weight:300}
+html:not([lang="en"]) .quote p{font-style:normal;font-weight:500}
+.quote .bar{width:60px;height:4px;background:var(--teal-2);border-radius:4px;margin-top:20px}
+.quote svg.mount{position:absolute;inset-inline:0;bottom:0;width:100%;opacity:.18}
+.traits{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.traits span{padding:7px 14px;border-radius:999px;background:var(--teal-soft);color:var(--teal);font-weight:600;font-size:14px}
+
+/* experience */
+.timeline{position:relative;padding-inline-start:44px}
+.timeline::before{content:"";position:absolute;inset-inline-start:13px;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(var(--teal),var(--navy))}
+.job{position:relative;margin-bottom:24px}
+.job::before{content:"";position:absolute;inset-inline-start:-40px;top:30px;width:20px;height:20px;border-radius:50%;background:var(--surface);border:5px solid var(--teal);box-shadow:0 0 0 5px var(--teal-soft)}
+.job .card{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 30px;transition:.3s}
+.job .card:hover{transform:translateX(6px);border-color:var(--teal)}
+[dir="rtl"] .job .card:hover{transform:translateX(-6px)}
+.job h3{font-size:clamp(18px,2vw,22px);font-weight:700;color:var(--text)}
+.job p{color:var(--muted);font-size:15px}
+.dur{flex:none;display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:12px;background:var(--surface-2);font-weight:600;font-size:14px;color:var(--text);white-space:nowrap}
+.dur svg{width:17px;height:17px;color:var(--teal)}
+.now{display:inline-block;margin-inline-start:8px;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--teal);color:#fff;vertical-align:middle}
+.job.current::before{background:var(--teal);animation:pulse 2s infinite}
+
+/* skills */
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.skills-grid h3{font-size:20px;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.skills-grid h3 i{width:10px;height:10px;border-radius:3px;background:var(--teal);transform:rotate(45deg)}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chip{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:var(--surface-2);border:1px solid transparent;font-weight:600;font-size:15px;transition:.25s}
+.chip:hover{border-color:var(--teal);background:var(--teal-soft);transform:translateY(-3px)}
+.chip .ci{width:34px;height:34px;flex:none;border-radius:10px;background:var(--surface);color:var(--teal);display:grid;place-items:center;box-shadow:0 4px 10px -4px rgba(0,0,0,.15)}
+.chip .ci svg{width:18px;height:18px}
+
+/* education */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.edu{position:relative;overflow:hidden}
+.edu .big-ic{position:absolute;inset-inline-end:-20px;bottom:-30px;width:170px;height:170px;color:var(--teal);opacity:.08}
+.edu .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--teal);background:var(--teal-soft);padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.edu .tag svg{width:16px;height:16px}
+.edu h3{font-size:22px;margin-bottom:6px}
+.edu p{color:var(--muted)}
+.edu .yr{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-family:var(--font-latin)}
+.edu .yr svg{width:18px;height:18px;color:var(--teal)}
+
+/* contact */
+.contact{background:linear-gradient(135deg,var(--navy),#0b1f31);color:#fff;border-radius:32px;padding:60px;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:30px 30px}
+.contact-in{position:relative;display:grid;grid-template-columns:1fr 1.3fr;gap:50px;align-items:center}
+.contact h2{font-size:clamp(28px,3.6vw,42px);font-weight:800;margin-bottom:14px}
+.contact h2 em{font-style:normal;color:var(--teal-2)}
+.contact .lead{opacity:.8;margin-bottom:28px}
+.c-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.c-item{display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);transition:.25s;min-width:0}
+a.c-item:hover{background:rgba(27,196,184,.18);border-color:var(--teal-2);transform:translateY(-3px)}
+.c-item .ci{width:44px;height:44px;flex:none;border-radius:50%;border:2px solid var(--teal-2);display:grid;place-items:center;color:var(--teal-2)}
+.c-item .ci svg{width:20px;height:20px}
+.c-item small{display:block;font-size:12px;opacity:.65}
+.c-item b{font-weight:600;font-size:15px;word-break:break-all}
+.c-item.wide{grid-column:span 2}
+
+footer{padding:40px 0;text-align:center;color:var(--muted);font-size:14px}
+footer .bars{display:flex;justify-content:center;gap:8px;margin-bottom:16px}
+footer .bars i{height:5px;width:120px;border-radius:5px;background:var(--navy)}
+footer .bars i+i{width:60px;background:var(--teal)}
+
+.to-top{position:fixed;inset-inline-end:22px;bottom:22px;z-index:40;opacity:0;pointer-events:none;transition:.3s;background:linear-gradient(135deg,var(--navy),var(--teal));color:#fff;border:0}
+.to-top.show{opacity:1;pointer-events:auto}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+.fade-lang{animation:fl .45s ease}
+@keyframes fl{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .menu{position:fixed;top:74px;inset-inline:16px;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow);transform:translateY(-12px);opacity:0;pointer-events:none;transition:.25s}
+  .menu.open{transform:none;opacity:1;pointer-events:auto}
+  .burger{display:grid}
+  .hero-grid,.about-grid,.skills-grid,.edu-grid,.contact-in{grid-template-columns:1fr}
+  .hero-grid{gap:70px}
+  .photo-box{order:-1;width:min(300px,78%)}
+  .hero{text-align:center}
+  .hero .role-bar{margin-inline:auto}
+  .motto,.cta{justify-content:center}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .stat:nth-child(2){border:0}
+  .contact{padding:40px 26px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .brand span{display:none}
+  .lang button{padding:7px 9px}
+  section.block{padding:70px 0}
+  .badge.b1{inset-inline-start:-20px;bottom:30px}
+  .badge.b2{inset-inline-end:-14px}
+  .gear.g1{inset-inline-end:-14px}
+  .job .card{flex-direction:column;align-items:flex-start}
+  .chips,.c-list{grid-template-columns:1fr}
+  .c-item.wide{grid-column:auto}
+  .card{padding:24px}
+  .timeline{padding-inline-start:36px}
+  .job::before{inset-inline-start:-32px}
+  .timeline::before{inset-inline-start:9px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+@media print{
+  .nav,.to-top,.cta,.gear{display:none!important}
+  body{background:#fff}
+  .rv{opacity:1;transform:none}
+  section.block{padding:30px 0}
+  .hero{min-height:auto;padding:20px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 21c.6-4.4 4-7 8.5-7s7.9 2.6 8.5 7z"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24" fill="currentColor"><path d="M9 3h6a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v4H2V8a2 2 0 0 1 2-2h3V5a2 2 0 0 1 2-2zm0 3h6V5H9zM2 14h8v1.5h4V14h8v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24" fill="currentColor"><path d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.4 7.4 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.4 7.4 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.4 7.4 0 0 0 1.7 1l.4 2.6h4l.4-2.6a7.4 7.4 0 0 0 1.7-1l2.5 1 2-3.5zM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9zM5 13.2V17c0 1.7 3.1 4 7 4s7-2.3 7-4v-3.8l-7 3.8z"/></symbol>
+    <symbol id="i-cert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.5"/><path d="M9 7h6M9 11h6"/><circle cx="12" cy="16" r="2"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16.5" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h.01M12 13.5h.01M16.5 13.5h.01M7.5 17h.01M12 17h.01"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6 0l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.2z"/></symbol>
+    <symbol id="i-dl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"/></symbol>
+    <symbol id="i-cad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7zM3 7l9 5 9-5M12 12v10"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18zM2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3v-5l2-5h14l2 5v5h-2M5 12h14"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/><path d="M9.5 17h5"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.3-1.3a4 4 0 0 1-5-5L13 2.4l1.7 3.9zM6 18l-3 3"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l3 6-9 12L3 9z"/><path d="M3 9h18M12 21 8 9l4-6 4 6z"/></symbol>
+    <symbol id="i-cut" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24" fill="currentColor"><circle cx="8" cy="8" r="3.3"/><circle cx="17" cy="9" r="2.6"/><path d="M1.5 19c.4-3.3 3-5.5 6.5-5.5s6.1 2.2 6.5 5.5zM15 19c-.2-1.7-.9-3.2-2-4.3a6 6 0 0 1 4-1.2c2.9 0 5 1.9 5.5 5.5z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.5V12l3.5 2"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.5 7.5L3 21l1.5-5A8.5 8.5 0 1 1 21 12z"/><path d="M8 12h.01M12 12h.01M16 12h.01" stroke-linecap="round" stroke-width="2.6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#home" class="brand"><div class="brand-mark">MS</div><span data-i="brandName">Muhammed Sorna</span></a>
+    <ul class="menu" id="menu">
+      <li><a href="#about" data-i="navAbout"></a></li>
+      <li><a href="#experience" data-i="navExp"></a></li>
+      <li><a href="#skills" data-i="navSkills"></a></li>
+      <li><a href="#education" data-i="navEdu"></a></li>
+      <li><a href="#contact" data-i="navContact"></a></li>
+    </ul>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-l="ckb">کوردی</button>
+        <button data-l="ar">عربي</button>
+        <button data-l="en">EN</button>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="Theme"><svg><use href="#i-moon"/></svg></button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <div class="eyebrow"><span class="dot"></span><span data-i="available"></span></div>
+      <h1><span data-i="first"></span><span class="l2" data-i="last"></span></h1>
+      <div class="role" data-i="role"></div>
+      <div class="role-bar"></div>
+      <div class="motto"><span data-i="m1"></span><span data-i="m2"></span><span data-i="m3"></span></div>
+      <div class="cta">
+        <a href="#contact" class="btn btn-primary"><svg><use href="#i-mail"/></svg><span data-i="hire"></span></a>
+        <a href="muhamad soran.png" download="Muhammed-Sorna-Ali-CV.png" class="btn btn-ghost"><svg><use href="#i-dl"/></svg><span data-i="download"></span></a>
+      </div>
+    </div>
+    <div class="photo-box rv">
+      <svg class="gear g1"><use href="#i-gear"/></svg>
+      <svg class="gear g2"><use href="#i-gear"/></svg>
+      <div class="photo-frame"><img src="assets/photo.png" alt="Muhammed Sorna Ali"></div>
+      <div class="badge b1"><div class="bi"><svg><use href="#i-cad"/></svg></div><div><b>CAD/CAM</b><small data-i="badge1"></small></div></div>
+      <div class="badge b2"><div class="bi"><svg><use href="#i-wrench"/></svg></div><div><b data-i="badge2n"></b><small data-i="badge2"></small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats wrap rv">
+  <div class="stats-grid">
+    <div class="stat"><div class="num" data-count="4">0</div><div class="lbl" data-i="s1"></div></div>
+    <div class="stat"><div class="num" data-count="4" data-suffix="+">0</div><div class="lbl" data-i="s2"></div></div>
+    <div class="stat"><div class="num" data-count="14">0</div><div class="lbl" data-i="s3"></div></div>
+    <div class="stat"><div class="num" data-count="1">0</div><div class="lbl" data-i="s4"></div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="sec-icon"><svg><use href="#i-user"/></svg></div><div><div class="sec-num">01</div><h2 data-i="navAbout"></h2></div><div class="ln"></div></div>
+    <div class="about-grid">
+      <div class="card rv">
+        <p class="about-text" data-i="summary"></p>
+        <div class="traits"><span data-i="t1"></span><span data-i="t2"></span><span data-i="t3"></span><span data-i="t4"></span><span data-i="t5"></span></div>
+      </div>
+      <div class="card quote rv">
+        <div class="qm">“</div>
+        <p data-i="quote"></p>
+        <div class="bar"></div>
+        <svg class="mount" viewBox="0 0 400 100" preserveAspectRatio="none"><path d="M0 100 L80 40 L120 70 L200 10 L260 60 L300 35 L400 90 L400 100Z" fill="#fff"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="block" id="experience" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="sec-icon"><svg><use href="#i-brief"/></svg></div><div><div class="sec-num">02</div><h2 data-i="navExp"></h2></div><div class="ln"></div></div>
+    <div class="timeline">
+      <div class="job current rv"><div class="card"><div><h3><span data-i="j1"></span><span class="now" data-i="current"></span></h3><p data-i="j1r"></p></div><div class="dur"><svg><use href="#i-cal"/></svg><span data-i="j1d"></span></div></div></div>
+      <div class="job rv"><div class="card"><div><h3 data-i="j2"></h3><p data-i="j2r"></p></div><div class="dur"><svg><use href="#i-cal"/></svg><span data-i="j2d"></span></div></div></div>
+      <div class="job rv"><div class="card"><div><h3 data-i="j3"></h3><p data-i="j3r"></p></div><div class="dur"><svg><use href="#i-cal"/></svg><span data-i="j3d"></span></div></div></div>
+      <div class="job rv"><div class="card"><div><h3 data-i="j4"></h3><p data-i="j4r"></p></div><div class="dur"><svg><use href="#i-cal"/></svg><span data-i="j4d"></span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="block" id="skills" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="sec-icon"><svg><use href="#i-gear"/></svg></div><div><div class="sec-num">03</div><h2 data-i="navSkills"></h2></div><div class="ln"></div></div>
+    <div class="skills-grid">
+      <div class="card rv">
+        <h3><i></i><span data-i="techSkills"></span></h3>
+        <div class="chips">
+          <div class="chip"><span class="ci"><svg><use href="#i-pen"/></svg></span><span class="ltr">AutoCAD</span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-cube"/></svg></span><span class="ltr">ArtCAM</span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-cad"/></svg></span><span class="ltr">CAD/CAM</span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-pen"/></svg></span><span data-i="k1"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-code"/></svg></span><span data-i="k2"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-car"/></svg></span><span data-i="k3"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-bolt"/></svg></span><span data-i="k4"></span></div>
+        </div>
+      </div>
+      <div class="card rv">
+        <h3><i></i><span data-i="proSkills"></span></h3>
+        <div class="chips">
+          <div class="chip"><span class="ci"><svg><use href="#i-chip"/></svg></span><span data-i="k5"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-cut"/></svg></span><span data-i="k6"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-wrench"/></svg></span><span data-i="k7"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-bulb"/></svg></span><span data-i="k8"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-team"/></svg></span><span data-i="k9"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-clock"/></svg></span><span data-i="k10"></span></div>
+          <div class="chip"><span class="ci"><svg><use href="#i-chat"/></svg></span><span data-i="k11"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="block" id="education" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="sec-icon"><svg><use href="#i-cap"/></svg></div><div><div class="sec-num">04</div><h2 data-i="navEdu"></h2></div><div class="ln"></div></div>
+    <div class="edu-grid">
+      <div class="card edu rv">
+        <svg class="big-ic"><use href="#i-cap"/></svg>
+        <div class="tag"><svg><use href="#i-cap"/></svg><span data-i="eduTag"></span></div>
+        <h3 data-i="school"></h3>
+        <p data-i="dept"></p>
+        <div class="yr"><svg><use href="#i-cal"/></svg><span class="ltr">2020 – 2022</span></div>
+      </div>
+      <div class="card edu rv">
+        <svg class="big-ic"><use href="#i-cert"/></svg>
+        <div class="tag"><svg><use href="#i-cert"/></svg><span data-i="courseTag"></span></div>
+        <h3 data-i="course"></h3>
+        <p data-i="courseD"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block" id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="contact rv">
+      <div class="contact-in">
+        <div>
+          <h2><span data-i="cTitle1"></span> <em data-i="cTitle2"></em></h2>
+          <p class="lead" data-i="cLead"></p>
+          <a href="https://wa.me/9647501827928" target="_blank" rel="noopener" class="btn btn-primary"><svg><use href="#i-wa"/></svg><span data-i="whatsapp"></span></a>
+        </div>
+        <div class="c-list">
+          <a class="c-item" href="tel:+9647501827928"><span class="ci"><svg><use href="#i-phone"/></svg></span><div><small data-i="phone"></small><b class="ltr">+964 750 182 7928</b></div></a>
+          <div class="c-item"><span class="ci"><svg><use href="#i-pin"/></svg></span><div><small data-i="address"></small><b data-i="addr"></b></div></div>
+          <div class="c-item"><span class="ci"><svg><use href="#i-user"/></svg></span><div><small data-i="gender"></small><b data-i="male"></b></div></div>
+          <div class="c-item"><span class="ci"><svg><use href="#i-cal"/></svg></span><div><small data-i="dob"></small><b class="ltr">17/11/2003</b></div></div>
+          <a class="c-item wide" href="mailto:soranm462@gmail.com"><span class="ci"><svg><use href="#i-mail"/></svg></span><div><small data-i="email"></small><b class="ltr">soranm462@gmail.com</b></div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="bars"><i></i><i></i></div>
+  <span>© <span id="yr"></span> <span data-i="fullName"></span> — <span data-i="rights"></span></span>
+</footer>
+
+<button class="icon-btn to-top" id="toTop" aria-label="Top"><svg><use href="#i-up"/></svg></button>
+
+<script>
+const T = {
+  ckb: {
+    dir:"rtl", brandName:"محەمەد سۆرنا", fullName:"محەمەد سۆرنا عەلی",
+    navAbout:"دەربارەی من", navExp:"ئەزموون", navSkills:"توانستەکان", navEdu:"خوێندن", navContact:"پەیوەندی",
+    available:"ئامادەم بۆ هەلی کاری نوێ", first:"محەمەد", last:"سۆرنا عەلی",
+    role:"پسپۆڕی CAD/CAM و ئۆتۆمەیشن", m1:"فێربە", m2:"باشتر بە", m3:"گەشە بکە",
+    hire:"پەیوەندیم پێوە بکە", download:"داگرتنی CV",
+    badge1:"دیزاین و بەرهەمهێنان", badge2n:"٤ ساڵ", badge2:"میکانیکی ئۆتۆمبێل",
+    s1:"شوێنی کار", s2:"ساڵ ئەزموون", s3:"توانست", s4:"خولی پیشەیی",
+    summary:"کەسێکی خۆبزوێن، متمانەپێکراو، بەرپرسیار و کۆشاکارم، پابەندی کاتم و تامەزرۆی فێربوونی شارەزایی نوێم. هەم لە کاری بەکۆمەڵ و هەم بە تەنیا بە باشی کار دەکەم، و هەمیشە ئامادەم بۆ فێربوون و گەیشتن بە ئامانجی نوێ.",
+    t1:"خۆبزوێن", t2:"متمانەپێکراو", t3:"بەرپرسیار", t4:"کۆشاکار", t5:"پابەندی کات",
+    quote:"کاری ماندووبوون ئەو داهاتووە بنیات دەنێت کە دەمەوێت.",
+    current:"ئێستا",
+    j1:"پایۆنیر فارما", j1r:"بەشی Generic", j1d:"٢ ساڵ و ٥ مانگ",
+    j2:"کۆمپانیای جەسر (JASR)", j2r:"فەرمانبەری دیزاینی CAD/CAM و AutoCAD", j2d:"٤ مانگ",
+    j3:"کۆمپانیای نێودەوڵەتی ئۆتۆمبێلی زرێپۆش", j3r:"ڕاهێنانی زستانە", j3d:"٢ مانگ",
+    j4:"میکانیکی و کارەبای ئۆتۆمبێل", j4r:"چاککردنەوە و پشکنینی ئۆتۆمبێل", j4d:"٤ ساڵ",
+    techSkills:"توانستە تەکنیکییەکان", proSkills:"توانستە پیشەیی و کەسییەکان",
+    k1:"دیزاین", k2:"پرۆگرامکردنی CNC", k3:"میکانیکی ئۆتۆمبێل", k4:"میکانیکی کارەبا",
+    k5:"هەڵبژاردنی کانزاکان", k6:"بڕین و شێوەدانی کەرەستە", k7:"چاککردنەوەی میکانیکی", k8:"چارەسەرکردنی کێشە",
+    k9:"کاری بەکۆمەڵ", k10:"بەڕێوەبردنی کات", k11:"پەیوەندیکردن",
+    eduTag:"بڕوانامە", school:"پەیمانگەی تەکنیکی سلێمانی", dept:"بەشی تەندروستی کۆمەڵ — دەرچوو",
+    courseTag:"خول", course:"خولی میکانیکی ئامێرەکان", courseD:"بە سەرکەوتوویی خولێکی میکانیکی ئامێرەکانم تەواو کردووە.",
+    cTitle1:"با پێکەوە", cTitle2:"کار بکەین", cLead:"بۆ هەر هەلێکی کار یان پرۆژەیەک، بە ئاسانی پەیوەندیم پێوە بکە.",
+    whatsapp:"نامە لە واتسئاپ", phone:"ژمارەی مۆبایل", address:"ناونیشان", addr:"سلێمانی - قرگە",
+    gender:"ڕەگەز", male:"نێر", dob:"ڕێکەوتی لەدایکبوون", email:"ئیمەیڵ", rights:"هەموو مافەکان پارێزراون"
+  },
+  ar: {
+    dir:"rtl", brandName:"محمد سورنا", fullName:"محمد سورنا علي",
+    navAbout:"نبذة عني", navExp:"الخبرات", navSkills:"المهارات", navEdu:"التعليم", navContact:"التواصل",
+    available:"متاح لفرص عمل جديدة", first:"محمد", last:"سورنا علي",
+    role:"أخصائي CAD/CAM والأتمتة", m1:"تعلّم", m2:"تطوّر", m3:"انمُ",
+    hire:"تواصل معي", download:"تحميل السيرة الذاتية",
+    badge1:"التصميم والتصنيع", badge2n:"٤ سنوات", badge2:"ميكانيك السيارات",
+    s1:"جهات عمل", s2:"سنوات خبرة", s3:"مهارة", s4:"دورة مهنية",
+    summary:"شخص ذو دافع ذاتي، موثوق، مسؤول ومجتهد، ملتزم بالمواعيد ومتحمّس لتعلّم مهارات جديدة. أعمل بكفاءة ضمن الفريق وبشكل مستقل، ومستعد دائماً للتعلّم وتحقيق أهداف جديدة.",
+    t1:"دافع ذاتي", t2:"موثوق", t3:"مسؤول", t4:"مجتهد", t5:"ملتزم بالوقت",
+    quote:"العمل الجاد يبني المستقبل الذي أريده.",
+    current:"حالياً",
+    j1:"بايونير فارما", j1r:"قسم Generic", j1d:"سنتان و٥ أشهر",
+    j2:"شركة جسر (JASR)", j2r:"موظف تصميم CAD/CAM و AutoCAD", j2d:"٤ أشهر",
+    j3:"الشركة الدولية للمركبات المدرعة", j3r:"تدريب شتوي", j3d:"شهران",
+    j4:"ميكانيك وكهرباء السيارات", j4r:"صيانة وفحص المركبات", j4d:"٤ سنوات",
+    techSkills:"المهارات التقنية", proSkills:"المهارات المهنية والشخصية",
+    k1:"التصميم", k2:"برمجة CNC", k3:"ميكانيك السيارات", k4:"الميكانيك الكهربائي",
+    k5:"اختيار المعادن", k6:"قطع وتشكيل المواد", k7:"الصيانة الميكانيكية", k8:"حل المشكلات",
+    k9:"العمل الجماعي", k10:"إدارة الوقت", k11:"التواصل",
+    eduTag:"الشهادة", school:"المعهد التقني في السليمانية", dept:"قسم صحة المجتمع — خريج",
+    courseTag:"دورة", course:"دورة في ميكانيك الآلات", courseD:"أكملت بنجاح دورة تدريبية في ميكانيك الآلات.",
+    cTitle1:"لنعمل", cTitle2:"معاً", cLead:"لأي فرصة عمل أو مشروع، لا تتردد في التواصل معي.",
+    whatsapp:"راسلني على واتساب", phone:"رقم الهاتف", address:"العنوان", addr:"السليمانية - قرگه",
+    gender:"الجنس", male:"ذكر", dob:"تاريخ الميلاد", email:"البريد الإلكتروني", rights:"جميع الحقوق محفوظة"
+  },
+  en: {
+    dir:"ltr", brandName:"Muhammed Sorna", fullName:"Muhammed Sorna Ali",
+    navAbout:"About", navExp:"Experience", navSkills:"Skills", navEdu:"Education", navContact:"Contact",
+    available:"Open to new opportunities", first:"Muhammed", last:"Sorna Ali",
+    role:"CAD/CAM & Automation Specialist", m1:"Learn", m2:"Improve", m3:"Grow",
+    hire:"Get in touch", download:"Download CV",
+    badge1:"Design & Manufacturing", badge2n:"4 yrs", badge2:"Car mechanics",
+    s1:"Positions", s2:"Years of experience", s3:"Skills", s4:"Professional course",
+    summary:"Self-motivated, reliable, responsible and hardworking professional with good timekeeping, eager to learn new skills. Works well both in a team and independently, always willing to learn and achieve new goals.",
+    t1:"Self-motivated", t2:"Reliable", t3:"Responsible", t4:"Hardworking", t5:"Punctual",
+    quote:"Hard work builds the future I want.",
+    current:"Current",
+    j1:"Pioneer Pharma", j1r:"Generic Section", j1d:"2 years 5 months",
+    j2:"JASR Company", j2r:"CAD/CAM and AutoCAD design employee", j2d:"4 months",
+    j3:"International Armored Vehicles Company", j3r:"Winter training", j3d:"2 months",
+    j4:"Car Mechanic & Electrical Mechanic", j4r:"Vehicle repair and diagnostics", j4d:"4 years",
+    techSkills:"Technical Skills", proSkills:"Professional & Soft Skills",
+    k1:"Design", k2:"CNC Programming", k3:"Car Mechanic", k4:"Electric Mechanic",
+    k5:"Metallurgical Selection", k6:"Material Cutting & Forming", k7:"Mechanical Maintenance", k8:"Problem Solving",
+    k9:"Teamwork", k10:"Time Management", k11:"Communication",
+    eduTag:"Degree", school:"Sulaimaniyah Technical Institute", dept:"Community Health — Graduate",
+    courseTag:"Course", course:"Machine Mechanics Course", courseD:"Successfully completed a course in Machine Mechanics.",
+    cTitle1:"Let's work", cTitle2:"together", cLead:"For any job opportunity or project, feel free to reach out.",
+    whatsapp:"Message on WhatsApp", phone:"Phone", address:"Address", addr:"Sulaimany - Qirga",
+    gender:"Gender", male:"Male", dob:"Date of birth", email:"Email", rights:"All rights reserved"
+  }
+};
+
+const root = document.documentElement;
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+
+function setLang(l){
+  if(!T[l]) l = "ckb";
+  const d = T[l];
+  root.lang = l; root.dir = d.dir;
+  document.querySelectorAll("[data-i]").forEach(el=>{
+    const v = d[el.dataset.i];
+    if(v !== undefined) el.textContent = v;
+  });
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on", b.dataset.l === l));
+  document.title = d.fullName + " — CV";
+  const c = document.getElementById("content");
+  c.classList.remove("fade-lang"); void c.offsetWidth; c.classList.add("fade-lang");
+  store.set("cv-lang", l);
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.l)));
+const qp = new URLSearchParams(location.search).get("lang");
+setLang(qp || store.get("cv-lang") || "ckb");
+
+// theme
+const themeBtn = document.getElementById("themeBtn");
+function isDark(){ return root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; }
+function paintThemeIcon(){ themeBtn.querySelector("use").setAttribute("href", isDark() ? "#i-sun" : "#i-moon"); }
+const savedTheme = store.get("cv-theme"); if(savedTheme) root.dataset.theme = savedTheme;
+paintThemeIcon();
+themeBtn.addEventListener("click",()=>{ root.dataset.theme = isDark() ? "light" : "dark"; store.set("cv-theme", root.dataset.theme); paintThemeIcon(); });
+
+// nav
+const nav = document.getElementById("nav"), toTop = document.getElementById("toTop"), menu = document.getElementById("menu");
+document.getElementById("burger").addEventListener("click",()=>menu.classList.toggle("open"));
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>menu.classList.remove("open")));
+toTop.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+const links = [...menu.querySelectorAll("a")];
+addEventListener("scroll",()=>{
+  const y = scrollY;
+  nav.classList.toggle("scrolled", y > 30);
+  toTop.classList.toggle("show", y > 600);
+  let cur = "";
+  document.querySelectorAll("section[id]").forEach(s=>{ if(y + 140 >= s.offsetTop) cur = s.id; });
+  links.forEach(a=>a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+},{passive:true});
+
+// reveal + counters
+const fmt = n => (root.lang === "en" ? String(n) : n.toLocaleString("ar-EG"));
+function runCount(el){
+  const end = +el.dataset.count, suf = el.dataset.suffix || ""; let t0 = null;
+  const step = ts => { t0 ??= ts; const p = Math.min((ts - t0)/1200, 1); el.textContent = fmt(Math.round(end * (1 - Math.pow(1-p,3)))) + suf; if(p < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+const io = new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll("[data-count]").forEach(runCount);
+  io.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>document.querySelectorAll("[data-count]").forEach(el=>{ el.textContent = fmt(+el.dataset.count) + (el.dataset.suffix||""); })));
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
